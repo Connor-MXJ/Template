@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{057BFDD3-DC04-4B44-B0D5-8604C9898B38}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WLYD.WLYC.Mall.BussinessServices</RootNamespace>
+    <AssemblyName>WLYD.WLYC.Mall.BussinessServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseBussinessService.cs" />
+    <Compile Include="Constant\CacheKeyConstantVariable.cs" />
+    <Compile Include="DistrictBussinessServices.cs" />
+    <Compile Include="GoodsBussinessService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemBussinessService.cs" />
+    <Compile Include="WebBussinessService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataTransferObject\MXJ.Projects.DataTransferObjects\MXJ.Projects.DataTransferObjects.csproj">
+      <Project>{7a45de7a-76f9-4d47-9205-b8723f7c563f}</Project>
+      <Name>MXJ.Projects.DataTransferObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\CodeFirst\MXJ.Projects.Domain.Enums\MXJ.Projects.Domain.Enums.csproj">
+      <Project>{f4bfda41-e7c8-4d0e-9a55-6354697aaf11}</Project>
+      <Name>MXJ.Projects.Domain.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\CodeFirst\MXJ.Projects.Domain.Models\MXJ.Projects.Domain.Models.csproj">
+      <Project>{d485f9f9-a628-4f8a-8c24-f3dac0d01828}</Project>
+      <Name>MXJ.Projects.Domain.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\MXJ.Core.ValueInjector\MXJ.Core.ValueInjector.csproj">
+      <Project>{3223ed74-b071-4205-abe2-99286ae4f64c}</Project>
+      <Name>MXJ.Core.ValueInjector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\MXJ.Core\MXJ.Core.csproj">
+      <Project>{47932679-679a-417d-bc9f-ed9e9e9d85e2}</Project>
+      <Name>MXJ.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RepositoryServices\MXJ.Projects.IRepositoryServices\MXJ.Projects.IRepositoryServices.csproj">
+      <Project>{81211f98-4fab-4c1d-a0bb-67f0958c0f58}</Project>
+      <Name>MXJ.Projects.IRepositoryServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RepositoryServices\MXJ.Projects.RepositoryServices\MXJ.Projects.RepositoryServices.csproj">
+      <Project>{da91732b-94fe-49b5-bf58-5d1b2bd71449}</Project>
+      <Name>MXJ.Projects.RepositoryServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MXJ.Projects.IBussinessServices\MXJ.Projects.IBussinessServices.csproj">
+      <Project>{b4c9f68e-aaab-4444-83f6-a83fff963cb9}</Project>
+      <Name>MXJ.Projects.IBussinessServices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
